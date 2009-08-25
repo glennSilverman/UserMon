@@ -32,7 +32,7 @@ class ManageUsers extends ModelSnippet[User]{
             val v = new UserView(u, this)
             v.load
             val e = v.entity 
-       
+            
             bind("user",  chooseTemplate("user", "entry", ns),
                  "firstname" ->  Text(u.firstName.is),
                  "lastname" -> Text(u.lastName.is),
@@ -60,14 +60,20 @@ class ManageUsers extends ModelSnippet[User]{
             
       def loadRole(ids: List[String]) = { 
         Log.info("Loading roles...")        
-        for(x <- ids)
+        for(x <- ids){
+          
+          Log.info("Loading role " + x)
           updated += Role.findAll(By(Role.id, x.toInt)).first 
+         }
       } 
       
       def saveRoles = {
           Log.info("Saving roles...")
           theUser.roles.clear
-    	  for(r <- updated) theUser.roles += r
+    	  for(r <- updated) {
+    	    Log.info("Saving role " + r.id.is)
+    	    theUser.roles += r
+          }
           theUser.save
           redirectTo("/list")
       }            

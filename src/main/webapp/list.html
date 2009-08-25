@@ -1,34 +1,29 @@
 <lift:surround with="default" at="content">   
     
    <h3>Site Users</h3>
-    <div id="entryform">      
-      
+    <div id="entryform"> 
      <table>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>  
-      <th>Roles</th>
-      <th></th>
-    </tr>    
-     <lift:ManageUsers.list form="POST">
-       <user:entry>
-		      <tr>
+	    <tr>
+	      <th>First Name</th>
+	      <th>Last Name</th>
+	      <th>Email</th>  
+	      <th>Roles</th>
+	      <th></th>
+	    </tr>
+    	<lift:ManageUsers.list> 
+    	  <user:entry>
+    	     <tr>
 		        <td><user:firstname /></td>
 	            <td><user:lastname /></td>
 		        <td><user:email/></td>
-                <td><user:roles/><user:edit/></td> 
-		      </tr>
-           </user:entry>           
-      </lift:ManageUsers.list>
-      
-   
-    <tr>
-      <td colspan="5">
-        <hr />
-      </td>
-    </tr>
+                <td><user:roles/></td>
+                <td><user:edit/></td> 
+              </tr>		     
+           </user:entry>  
+        </lift:ManageUsers.list>
+    
     </table>
    
   </div>
+ 
   </lift:surround>
