@@ -5,8 +5,16 @@ in Lift 1.1-SNAPSHOT.
 Registered users can log in, create a hierarchy of roles and assign
 roles to users.
 
-The application uses asmselect, a JQuery javascript multiselect form input for
-managing user roles, which has a many-to-many relationship with users.
+The application initially used asmselect, a JQuery javascript multiselect form input for
+managing user roles, which has a many-to-many relationship with users. However, the Remove
+capability in asmselect breaks down in Firefox 3 when you try to persist the changes. This problem
+does not occur in IE. 
+
+To see this problem, uncomment the line:
+
+<!-- <lift:HelloWorld.init/> -->
+
+in default.html.
 
 Set up and useage:
 
