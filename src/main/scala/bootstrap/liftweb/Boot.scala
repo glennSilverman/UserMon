@@ -85,7 +85,7 @@ object DBVendor extends ConnectionManager {
     "com.mysql.jdbc.Driver"
 
     val dbUrl: String = Props.get("db.url") openOr
-    "jdbc:mysql://localhost:3306/lift_publisher?user=glenn&password=monday"
+    "jdbc:mysql://localhost:3306/lift_usermon?user=<username>&password=<password>"
     
     Class.forName(driverName)
 
