@@ -1,0 +1,26 @@
+Usermon is an example role-based user management system in Lift
+that implements the new ManyToMany trait as well as ModelView and ModelSnippet
+in Lift 1.1-SNAPSHOT.
+
+Registered users can log in, create a hierarchy of roles and assign
+roles to users.
+
+The application uses asmselect, a JQuery javascript multiselect form input for
+managing user roles, which has a many-to-many relationship with users.
+
+Set up and useage:
+
+You can use derby for your database if you must, but the program is configured for mysql, so you will
+need to have a running instance of mysql. The pom includes the mysql jdbc driver as a dependency. 
+
+Create a database schema (the default is lift_usermon) to store the
+Lift mapper entities and configure for your mysql username and password, like so, 
+
+val dbUrl: String = Props.get("db.url") openOr
+    "jdbc:mysql://localhost:3306/lift_usermon?user=<username>&password=<password>"
+    
+in Boot.scala.
+
+
+  
+  

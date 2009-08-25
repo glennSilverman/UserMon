@@ -1,0 +1,15 @@
+<lift:surround with="default" at="content">
+ 
+  <lift:ManageUsers.edit form="POST">
+  <div id="entryform" class="column span-8 last">
+     <table>
+  	     <tr>
+  	     	<th>Roles for user: <user:name/></th>
+  	     </tr>
+  	     <tr><td><user:roles/></td></tr>
+   		 
+  	  </table>
+   <user:submit/>
+    </div>    
+  </lift:ManageUsers.edit>
+ </lift:surround>
